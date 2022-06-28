@@ -1,20 +1,6 @@
 <?php
 require( __DIR__ .'/config.php');
-// $dataName= 'manager';
-// $condition= "";
-// $order_by='';
-// $fields='*';
-// $limit="";
-// $data_array= "";
-// Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
-// $totle = Database::get()->getTotle();
-// print_r($totle);
-CustomFN::test();
-// FN::test();
-exit;
-// $getA= FN::ch_value($_GET['a']);
-$getA= ch_value($_GET['a']);
-// $langID = FN::langID();
+$getA= CustomFN::ch_value($_GET['a']);
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
     include(__DIR__.'/php/'.$getA.'.php');

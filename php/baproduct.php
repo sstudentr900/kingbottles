@@ -16,7 +16,7 @@ if(isset($_POST['seach'])){
     // $order_by='id ASC';
     // $row=Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
     $pn = 8;
-    // $r =FN::booknameSeach($_POST['p'],$pn);
+    // $r =CustomFN::booknameSeach($_POST['p'],$pn);
     $dataName= 'baproduct';
     $condition= "is_Del = 'N'";
     $order_by='';
@@ -82,7 +82,7 @@ if(isset($_POST['seach'])){
 }
 if(isset($_POST['add'])){
     $data_array = array(
-        "Image" =>FN::imgAdd($dataName,$_POST['Image2']),
+        "Image" =>CustomFN::imgAdd($dataName,$_POST['Image2']),
         'lg_title_tw' => $_POST['lg_title_tw'],
         'sm_title_tw' => $_POST['sm_title_tw'],
         'content_tw' => $_POST['content_tw'],
@@ -102,7 +102,7 @@ if(isset($_POST['add'])){
     exit();
 }
 if(isset($_POST['edit'])){
-    FN::imgEdite($dataName,$_POST['id'], $_POST['Image2']);
+    CustomFN::imgEdite($dataName,$_POST['id'], $_POST['Image2']);
     $data_array = array(
         'lg_title_tw' => $_POST['lg_title_tw'],
         'sm_title_tw' => $_POST['sm_title_tw'],
@@ -123,7 +123,7 @@ if(isset($_POST['Delete'])){
     $data_array= array('id'=>$_POST['id']);
     $image = Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
     if($image[0]['Image']){
-        FN::imgDelet($image[0]['Image']);
+        CustomFN::imgDelet($image[0]['Image']);
     }
 
     Database::get()->delete2($dataName,'id',$_POST['id']);

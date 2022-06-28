@@ -48,7 +48,7 @@ class FN
         $data_array = array("id" => $id);
         $path = Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
         if(empty($path[0]['Image'])){ //值為空
-            $data_array = array("Image" =>FN::imgAdd($dataName,$img));
+            $data_array = array("Image" =>CustomFN::imgAdd($dataName,$img));
             Database::get()->update2($dataName,$data_array,'id',$id);
             return;
         }

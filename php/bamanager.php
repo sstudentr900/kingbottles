@@ -91,7 +91,7 @@ if(isset($_GET['email'])){
 if(isset($_POST['add'])){
     $passwrd = md5('@#mj'.$_POST['Password'].'app!');
     $data_array = array(
-        "Image" =>FN::imgAdd('bamanager',$_POST['Image2']),
+        "Image" =>CustomFN::imgAdd('bamanager',$_POST['Image2']),
         'Account' => $_POST['Account'],
         'Password' => $passwrd,
         'Name' => $_POST['Name'],
@@ -115,7 +115,7 @@ if(isset($_POST['edit'])){
     $fields='Image';
     $limit="";
     $data_array = array("id" => $_POST['id']);
-    FN::imgEdite('manager',$_POST['id'], $_POST['Image2']);
+    CustomFN::imgEdite('manager',$_POST['id'], $_POST['Image2']);
     $data_array = array(
         "Name" => $_POST['Name'],
         "is_Release" => $_POST['is_Release'],
@@ -139,7 +139,7 @@ if(isset($_POST['Delete'])){
     $data_array= array('id'=>$_POST['id']);
     $image = Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
     if($image[0]['Image']){
-        FN::imgDelet($image[0]['Image']);
+        CustomFN::imgDelet($image[0]['Image']);
     }
     Database::get()->delete2($dataName,'id',$_POST['id']);
     echo json_encode(array('result'=>true));
