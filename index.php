@@ -15,11 +15,6 @@ if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
 
     if(preg_match("/^balogin$/", $getA)){
         //後台登入
-        print_r('後台登入:'.__DIR__.'/php/balogin.php');
-        echo '<br>';
-        print_r('後台登入:'.__DIR__.'/php/'.$getA.'.php');
-        // include(__DIR__.'/php/'.$getA.'.php');
-        // include(__DIR__.'/php/fnhome.php');
         include(__DIR__.'/php/'.$getA.'.php');
         exit();
     }
@@ -40,7 +35,6 @@ if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
         //         $fnMember = 1;
         //     // }
         // }
-        print_r('fn:'.__DIR__.'/php/'.$getA.'.php');
         include(__DIR__.'/php/'.$getA.'.php');
         exit();
     }
