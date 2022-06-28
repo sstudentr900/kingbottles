@@ -10,7 +10,7 @@ Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_arra
 $totle = Database::get()->getTotle();
 print_r($totle);
 // FN::test();
-exit();
+exit;
 $getA= FN::ch_value($_GET['a']);
 // $langID = FN::langID();
 
