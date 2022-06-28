@@ -41,4 +41,6 @@ if (isset($_POST) && !empty($_POST)){
     }
     $error = implode(',',$error);
 }
+print_r('balogin');
+exit;
 include('page/balogin.php');
