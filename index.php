@@ -15,7 +15,7 @@ if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
         //後台登入
         print_r('後台登入:'.__DIR__.'/php/balogin.php');
         // include(__DIR__.'/php/'.$getA.'.php');
-        include(__DIR__.'/php/balogin.php');
+        include(__DIR__.'/php/fnhome.php');
         exit();
     }
 
