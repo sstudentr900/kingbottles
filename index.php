@@ -5,6 +5,8 @@ $getA= ch_value($_GET['a']);
 // $langID = FN::langID();
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
+    include(__DIR__.'/php/'.$getA.'.php');
+    exit();
     if(preg_match("/^balogout$/", $getA)){
         //後台登出
         include(__DIR__.'/php/'.$getA.'.php');
