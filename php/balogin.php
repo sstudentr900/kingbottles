@@ -1,4 +1,6 @@
 <?php
+echo '1233';
+exit();
 if (isset($_POST) && !empty($_POST)){
     $error = array();
     $account = FN::ch_email($_POST['account']);
@@ -41,6 +43,6 @@ if (isset($_POST) && !empty($_POST)){
     }
     $error = implode(',',$error);
 }
-echo '1233';
+
 // include(__DIR__.'/page/balogin.php');
 
