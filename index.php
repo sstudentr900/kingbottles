@@ -3,12 +3,6 @@ require( __DIR__ .'/config.php');
 
 $getA= ch_value($_GET['a']);
 // $langID = FN::langID();
-print_r(__DIR__);
-echo '<br>';
-print_r($getA);
-echo '<br>';
-print_r(preg_match("/^balogin$/", $getA));
-echo '<br>';
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
     if(preg_match("/^balogout$/", $getA)){
