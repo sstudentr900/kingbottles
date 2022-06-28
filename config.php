@@ -17,14 +17,22 @@
 
 
 // 資料庫
+//1.
 // const MYSQL_HOST="10.1.7.4";
 // const MYSQL_USERNAME="medicine";
 // const MYSQL_PASSWORD="mjAPpMe#DicinE!";
 // const MYSQL_DBNAME="MJAPP_medicine";
-const MYSQL_HOST="10.1.6.248";
-const MYSQL_USERNAME="MJAPP_kingbottles";
-const MYSQL_PASSWORD="MJAPP_kingbottles";
-const MYSQL_DBNAME="MJAPP_kingbottles";
+// const MYSQL_HOST="10.1.6.248";
+//2.
+// const MYSQL_USERNAME="MJAPP_kingbottles";
+// const MYSQL_PASSWORD="MJAPP_kingbottles";
+// const MYSQL_DBNAME="MJAPP_kingbottles";
+//3.
+// mysql://b76525842fa062:919baab0@us-cdbr-east-05.cleardb.net/heroku_3ba40f4d37f77ea?reconnect=true
+const MYSQL_HOST="us-cdbr-east-05.cleardb.net";
+const MYSQL_USERNAME="b76525842fa062";
+const MYSQL_PASSWORD="919baab0";
+const MYSQL_DBNAME="heroku_3ba40f4d37f77ea";
 try{
      // 建立MySQL伺服器連接和開啟資料庫 
     $PDO=new PDO("mysql:host=".MYSQL_HOST.";charset=utf8mb4;port=3306;dbname=".MYSQL_DBNAME,MYSQL_USERNAME,MYSQL_PASSWORD);
