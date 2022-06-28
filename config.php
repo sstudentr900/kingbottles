@@ -56,7 +56,10 @@ session_start();
 spl_autoload_register(function ($class_name) {
     $load_FileName = str_replace('\\', '/', $class_name);
     print_r($load_FileName);
+    echo '<br>';
     $file_name = __DIR__ ."/libraries/". $load_FileName .".php";
+    print_r($file_name);
+    echo '<br>';
     if ( is_file($file_name) === true ) {
         require_once($file_name);
     }
