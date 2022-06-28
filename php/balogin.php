@@ -44,4 +44,4 @@ if (isset($_POST) && !empty($_POST)){
 }
 
 // exit;
-require('page/balogin.php');
+include('page/balogin.php');
