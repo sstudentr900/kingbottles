@@ -1,6 +1,8 @@
 <?php
 require( __DIR__ .'/config.php');
 
+FN::test();
+exit();
 $getA= FN::ch_value($_GET['a']);
 // $langID = FN::langID();
 
