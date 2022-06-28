@@ -1,7 +1,7 @@
 <?php
 require( __DIR__ .'/config.php');
 
-$getA= FN::ch_value($_GET['a']);
+$getA= ch_value($_GET['a']);
 // $langID = FN::langID();
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){

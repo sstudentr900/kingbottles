@@ -61,6 +61,18 @@ spl_autoload_register(function ($class_name) {
     }
 });
 
+function ch_value($data){
+    //去除使用者輸入資料中不必要的字元（多餘的空格、製表符、換行）
+    $data = trim($data);
+    //刪除使用者輸入資料中的反斜槓（\）
+    $data = stripslashes($data);
+    //把特殊字元轉換為 HTML 實體
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
+
 
 //twitter
 // if(isset($_SESSION['oauth_token']) && isset($_GET['oauth_verifier']) && isset($_GET['oauth_token'])){
