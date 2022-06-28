@@ -1,7 +1,15 @@
 <?php
 require( __DIR__ .'/config.php');
-
-FN::test();
+$dataName= 'manager';
+$condition= "";
+$order_by='';
+$fields='*';
+$limit="";
+$data_array= "";
+Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
+$totle = Database::get()->getTotle();
+print_r($totle);
+// FN::test();
 exit();
 $getA= FN::ch_value($_GET['a']);
 // $langID = FN::langID();
