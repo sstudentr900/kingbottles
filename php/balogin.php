@@ -1,3 +1,3 @@
 <?php
-include(__DIR__.'/page/balogin.php');
+include('balogin_html.php');
 
