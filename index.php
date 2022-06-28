@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+exit;
 require( __DIR__ .'/config.php');
 
 $getA= FN::ch_value($_GET['a']);
