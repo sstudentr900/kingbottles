@@ -8,18 +8,19 @@ echo '<br>';
 print_r($getA);
 echo '<br>';
 print_r(preg_match("/^balogin$/", $getA));
+echo '<br>';
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
     if(preg_match("/^balogout$/", $getA)){
         //後台登出
-        include( __DIR__.'/php/'.$getA.'.php' );
+        include(__DIR__.'/php/'.$getA.'.php');
         exit();
     }
 
     if(preg_match("/^balogin$/", $getA)){
         //後台登入
         print_r('後台登入');
-        include( __DIR__.'/php/'.$getA.'.php' );
+        include(__DIR__.'/php/'.$getA.'.php');
         exit();
     }
 
@@ -39,12 +40,13 @@ if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
         //         $fnMember = 1;
         //     // }
         // }
-        include(__DIR__.'/php/'.$getA.'.php' );
+        // include(__DIR__.'/php/'.$getA.'.php');
+        print_r('fn');
         exit();
     }
 
     if(preg_match("/^ba/", $getA) && isset($_SESSION['baMemberID']) && !empty($_SESSION['baMemberID'])){
-        include(__DIR__.'/php/'.$getA.'.php' );
+        include(__DIR__.'/php/'.$getA.'.php');
         exit();
     }else{
         header('Location:?a=fnindex');
