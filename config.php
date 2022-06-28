@@ -63,6 +63,7 @@ spl_autoload_register(function ($class_name) {
     if ( is_file($file_name) === true ) {
         require_once($file_name);
     }
+    exit();
 });
 
 function ch_value($data){
