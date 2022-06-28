@@ -1,4 +1,5 @@
 <?php
+print_r('balogin');
 if (isset($_POST) && !empty($_POST)){
     $error = array();
     $account = FN::ch_email($_POST['account']);
@@ -41,6 +42,6 @@ if (isset($_POST) && !empty($_POST)){
     }
     $error = implode(',',$error);
 }
-print_r('balogin');
+
 // exit;
 require('page/balogin.php');
