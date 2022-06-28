@@ -33,16 +33,16 @@ const MYSQL_HOST="us-cdbr-east-05.cleardb.net";
 const MYSQL_USERNAME="b76525842fa062";
 const MYSQL_PASSWORD="919baab0";
 const MYSQL_DBNAME="heroku_3ba40f4d37f77ea";
-try{
-     // 建立MySQL伺服器連接和開啟資料庫 
-    $PDO=new PDO("mysql:host=".MYSQL_HOST.";charset=utf8mb4;port=3306;dbname=".MYSQL_DBNAME,MYSQL_USERNAME,MYSQL_PASSWORD);
-    // 指定PDO錯誤模式和錯誤處理
-    $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $PDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-} catch(PDOException $e){
-    print_r($e);
-    exit;
-}
+// try{
+//      // 建立MySQL伺服器連接和開啟資料庫 
+//     $PDO=new PDO("mysql:host=".MYSQL_HOST.";charset=utf8mb4;port=3306;dbname=".MYSQL_DBNAME,MYSQL_USERNAME,MYSQL_PASSWORD);
+//     // 指定PDO錯誤模式和錯誤處理
+//     $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//     $PDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+// } catch(PDOException $e){
+//     print_r($e);
+//     exit;
+// }
 
 
 //const
@@ -55,6 +55,7 @@ session_start();
 //autoload
 spl_autoload_register(function ($class_name) {
     $load_FileName = str_replace('\\', '/', $class_name);
+    print_r($load_FileName);
     $file_name = __DIR__ ."/libraries/". $load_FileName .".php";
     if ( is_file($file_name) === true ) {
         require_once($file_name);

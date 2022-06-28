@@ -58,5 +58,91 @@ if(isset($_POST['seach'])){
     
     exit();
 }
+if(isset($_GET['Account'])){
+    $condition='Account=:Account';
+    $order_by='';
+    $fields='';
+    $limit='';
+    $data_array = array("Account" => $_GET['Account']);
+    Database::get()->query2($dataName, $condition, $order_by, $fields, $limit, $data_array);
+    $row = Database::get()->getTotle();
+    if(!$row){
+        echo 'true';
+    }else{
+        echo 'false';
+    }
+    exit();
+}//新增驗證有無重複帳號
+if(isset($_GET['email'])){
+    $condition='Account=:Account';
+    $order_by='';
+    $fields='';
+    $limit='';
+    $data_array = array("Account" => $_GET['email']);
+    Database::get()->query2($dataName, $condition, $order_by, $fields, $limit, $data_array);
+    $row = Database::get()->getTotle();
+    if($row>=2){//2個樣的帳號
+        echo 'false';
+    }else{
+        echo 'true';
+    }
+    exit();
+}//修改驗證除了自己有無重複帳號
+if(isset($_POST['add'])){
+    $passwrd = md5('@#mj'.$_POST['Password'].'app!');
+    $data_array = array(
+        "Image" =>FN::imgAdd('bamanager',$_POST['Image2']),
+        'Account' => $_POST['Account'],
+        'Password' => $passwrd,
+        'Name' => $_POST['Name'],
+        'Phone' => $_POST['Phone'],
+        'is_Release' => $_POST['is_Release']
+    );
+    Database::get()->insert2($dataName, $data_array);
+    $row = Database::get()->getLastId();
 
+
+    if($row){
+        echo json_encode(array('result'=>true));
+    }else{
+        echo json_encode(array('result'=>false,'message'=>'資料庫錯誤'));
+    }
+    exit();
+}
+if(isset($_POST['edit'])){
+    $condition = "id = :id";
+    $order_by='';
+    $fields='Image';
+    $limit="";
+    $data_array = array("id" => $_POST['id']);
+    FN::imgEdite('manager',$_POST['id'], $_POST['Image2']);
+    $data_array = array(
+        "Name" => $_POST['Name'],
+        "is_Release" => $_POST['is_Release'],
+        "Phone" => $_POST['Phone']);
+    $row = Database::get()->update2($dataName,$data_array,'id',$_POST['id']);
+    echo json_encode(array('result'=>true));
+    exit();
+}
+if(isset($_POST['passwordEdite'])){
+    $passwrd = md5('@#mj'.$_POST['Password'].'app!');
+    $data_array = array("Password" => $passwrd);
+    $row = Database::get()->update2($dataName,$data_array,'id',$_POST['id']);
+    echo json_encode(array('result'=>true));
+    exit();
+}
+if(isset($_POST['Delete'])){
+    $condition= "id=:id";
+    $order_by='';
+    $fields='Image';
+    $limit="";
+    $data_array= array('id'=>$_POST['id']);
+    $image = Database::get()->query2($dataName,$condition,$order_by,$fields,$limit,$data_array);
+    if($image[0]['Image']){
+        FN::imgDelet($image[0]['Image']);
+    }
+    Database::get()->delete2($dataName,'id',$_POST['id']);
+    echo json_encode(array('result'=>true));
+    exit();
+}
 include('page/component/baTemplate.php');
