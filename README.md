@@ -12,7 +12,7 @@ heroku ClearDB MySQL
     heroku open
 ```
 
-## open log
+## heroku log
 ```
     heroku logs --tail
 ```
