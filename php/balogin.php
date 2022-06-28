@@ -1,3 +1,3 @@
 <?php
-include('balogin_html.php');
+include('page/component/balogin.php');
 
