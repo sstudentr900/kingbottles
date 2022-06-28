@@ -1,6 +1,9 @@
 <?php
 class FN
 {
+    static function test(){
+        echo 'test';
+    }
     //valu
     static function ch_value($data){
         //去除使用者輸入資料中不必要的字元（多餘的空格、製表符、換行）

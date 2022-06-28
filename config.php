@@ -66,6 +66,9 @@ spl_autoload_register(function ($class_name) {
     exit();
 });
 
+FN::test();
+exit();
+
 function ch_value($data){
     //去除使用者輸入資料中不必要的字元（多餘的空格、製表符、換行）
     $data = trim($data);
