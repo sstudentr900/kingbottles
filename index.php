@@ -11,7 +11,8 @@ $totle = Database::get()->getTotle();
 print_r($totle);
 // FN::test();
 exit;
-$getA= FN::ch_value($_GET['a']);
+// $getA= FN::ch_value($_GET['a']);
+$getA= ch_value($_GET['a']);
 // $langID = FN::langID();
 
 if (!empty($getA) && is_file(__DIR__ . "/php/" . $getA . ".php") == true ){
