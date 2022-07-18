@@ -464,7 +464,7 @@ form .link.active .showLink {
 .ba .baleft .logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     /* border-bottom: 1px solid #585858; */
     justify-content: center;
 }
