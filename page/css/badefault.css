@@ -464,13 +464,13 @@ form .link.active .showLink {
 .ba .baleft .logo {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #585858;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid #585858; */
     justify-content: center;
 }
 .ba .baleft .logo a{
-    width: 90px;
-    margin: 10px 10px 15px;
+    width: 70px;
+    margin: 15px 15px 15px 5px;
 }
 .ba .baleft .logo svg {
     /* fill: #fff; */
@@ -807,7 +807,8 @@ form .link.active .showLink {
 }
 
 .ProductsContent ul li>div img {
-    width: 60%;
+    width: 100%;
+    max-width: 60px;
     height: auto;
 }
 
@@ -848,7 +849,9 @@ form .link.active .showLink {
 .bamanager .ProductsContent ul li>div:nth-child(2) {
     flex: 2 1 200px;
 }
-.bamanager .ProductsContent ul li>div:nth-child(3),
+.bamanager .ProductsContent ul li>div:nth-child(3){
+    flex: 1 1 120px;
+}
 .bamanager .ProductsContent ul li>div:nth-child(5),
 .bamanager .ProductsContent ul li>div:nth-child(6),
 .bamanager .ProductsContent ul li>div:nth-child(7) {

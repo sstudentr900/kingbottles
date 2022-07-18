@@ -16,11 +16,11 @@
                 <div class="bottom">
                     <div class="item">
                         <label class="" account="">帳號</label>
-                        <input id="account" type="text" class="form-controls" name="account" data-validation-engine="validate[required]" value="">
+                        <input id="account" type="text" class="form-controls" name="account" data-validation-engine="validate[required]" value="1@1.1">
                     </div>
                     <div class="item password" id="password">
                         <label for="inputPassword">密碼</label>
-                        <input id='passwordInput' class="form-controls" type="password" name="password" autocomplete="new-password" data-validation-engine="validate[required]" value="">
+                        <input id='passwordInput' class="form-controls" type="password" name="password" autocomplete="new-password" data-validation-engine="validate[required]" value="11111">
                         <i id="showPasswordBtn"></i>
                     </div>
                     <div class="item">
