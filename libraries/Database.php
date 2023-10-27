@@ -17,7 +17,7 @@ class Database{
         if(isset(self::$instance)){
             return self::$instance;
         }else{
-            return NULL;
+            return '資料庫錯誤';
         }
     }
 }

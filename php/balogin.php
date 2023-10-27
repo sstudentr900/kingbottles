@@ -1,9 +1,9 @@
 <?php
+$error ='';
 if (isset($_POST) && !empty($_POST)){
-    $error = array();
     $account = CustomFN::ch_email($_POST['account']);
     $password = CustomFN::ch_value($_POST['password']);
-
+    $error = array();
 
     //帳號
     if($account['re']==false){

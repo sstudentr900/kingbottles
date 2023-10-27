@@ -29,10 +29,15 @@
 // const MYSQL_DBNAME="MJAPP_kingbottles";
 //3.
 // mysql://b76525842fa062:919baab0@us-cdbr-east-05.cleardb.net/heroku_3ba40f4d37f77ea?reconnect=true
-const MYSQL_HOST="us-cdbr-east-05.cleardb.net";
-const MYSQL_USERNAME="b76525842fa062";
-const MYSQL_PASSWORD="919baab0";
-const MYSQL_DBNAME="heroku_3ba40f4d37f77ea";
+// const MYSQL_HOST="us-cdbr-east-05.cleardb.net";
+// const MYSQL_USERNAME="b76525842fa062";
+// const MYSQL_PASSWORD="919baab0";
+// const MYSQL_DBNAME="heroku_3ba40f4d37f77ea";
+//4.
+const MYSQL_HOST="localhost";
+const MYSQL_USERNAME="root";
+const MYSQL_PASSWORD="";
+const MYSQL_DBNAME="MJAPP_kingbottles";
 
 
 //const
