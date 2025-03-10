@@ -21,12 +21,13 @@ if (isset($_POST) && !empty($_POST)){
     //驗證帳號密碼
     if(empty($error)){
         $dataName='manager';
-        $condition = "Password=:Password AND Account=:Account AND is_Release = 'Y'";
+        $condition = "password=:password AND account=:account AND is_release = 'y'";
         $order_by = "";
         $fields = "id,Name";
         $limit='';
         $passwrd = md5('@#mj'.$password.'app!');
-        $data_array = array('Account'=>$account,'Password'=>$passwrd);
+        //$passwrd = $password;
+        $data_array = array('account'=>$account,'password'=>$passwrd);
         $manager = Database::get()->query2($dataName, $condition, $order_by, $fields, $limit, $data_array);
         $row = Database::get()->getTotle();
 

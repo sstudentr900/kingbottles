@@ -1,23 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.4
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- 主機: localhost
--- 產生時間： 2022 年 06 月 27 日 17:12
--- 伺服器版本: 5.5.56-MariaDB
--- PHP 版本： 5.6.40
+-- 主機： 127.0.0.1
+-- 產生時間： 2025-03-07 16:27:32
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `MJAPP_kingbottles`
+-- 資料庫： `mjapp_kingbottles`
 --
 
 -- --------------------------------------------------------
@@ -26,7 +27,7 @@ SET time_zone = "+00:00";
 -- 資料表結構 `baproduct`
 --
 
-CREATE TABLE IF NOT EXISTS `baproduct` (
+CREATE TABLE `baproduct` (
   `id` int(11) NOT NULL,
   `Image` varchar(255) NOT NULL,
   `lg_title_tw` varchar(20) NOT NULL,
@@ -36,10 +37,10 @@ CREATE TABLE IF NOT EXISTS `baproduct` (
   `sm_title_en` varchar(30) NOT NULL,
   `content_en` text NOT NULL,
   `is_Del` enum('Y','N') NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 資料表的匯出資料 `baproduct`
+-- 傾印資料表的資料 `baproduct`
 --
 
 INSERT INTO `baproduct` (`id`, `Image`, `lg_title_tw`, `sm_title_tw`, `content_tw`, `lg_title_en`, `sm_title_en`, `content_en`, `is_Del`) VALUES
@@ -55,9 +56,9 @@ INSERT INTO `baproduct` (`id`, `Image`, `lg_title_tw`, `sm_title_tw`, `content_t
 -- 資料表結構 `manager`
 --
 
-CREATE TABLE IF NOT EXISTS `manager` (
+CREATE TABLE `manager` (
   `id` int(11) NOT NULL,
-  `Create_Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Create_Time` timestamp NOT NULL DEFAULT current_timestamp(),
   `Image` varchar(255) NOT NULL,
   `Account` varchar(50) NOT NULL COMMENT '帳號',
   `Name` varchar(20) NOT NULL,
@@ -65,10 +66,10 @@ CREATE TABLE IF NOT EXISTS `manager` (
   `Password` varchar(50) NOT NULL,
   `is_Release` enum('Y','N') NOT NULL DEFAULT 'N',
   `is_Del` enum('Y','N') NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 資料表的匯出資料 `manager`
+-- 傾印資料表的資料 `manager`
 --
 
 INSERT INTO `manager` (`id`, `Create_Time`, `Image`, `Account`, `Name`, `Phone`, `Password`, `is_Release`, `is_Del`) VALUES
@@ -76,7 +77,7 @@ INSERT INTO `manager` (`id`, `Create_Time`, `Image`, `Account`, `Name`, `Phone`,
 (28, '2020-06-10 06:58:56', 'bamanager1591772336.jpg', 'phenix@mj-app.com.tw', 'phenix', '0988233544', '9d3817a028d89960cb381098e615c14a', 'Y', 'N');
 
 --
--- 已匯出資料表的索引
+-- 已傾印資料表的索引
 --
 
 --
@@ -93,19 +94,22 @@ ALTER TABLE `manager`
   ADD PRIMARY KEY (`id`);
 
 --
--- 在匯出的資料表使用 AUTO_INCREMENT
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- 使用資料表 AUTO_INCREMENT `baproduct`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `baproduct`
 --
 ALTER TABLE `baproduct`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
 --
--- 使用資料表 AUTO_INCREMENT `manager`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `manager`
 --
 ALTER TABLE `manager`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
