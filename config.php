@@ -33,12 +33,16 @@
 // const MYSQL_USERNAME="b76525842fa062";
 // const MYSQL_PASSWORD="919baab0";
 // const MYSQL_DBNAME="heroku_3ba40f4d37f77ea";
-//4.
+//4.本地
 const MYSQL_HOST="localhost";
 const MYSQL_USERNAME="root";
 const MYSQL_PASSWORD="";
-const MYSQL_DBNAME="MJAPP_kingbottles";
-
+const MYSQL_DBNAME="mjapp_kingbottles";
+//5.遠振
+// const MYSQL_HOST="localhost";
+// const MYSQL_USERNAME="sstudent_sstudent";
+// const MYSQL_PASSWORD="q29m3MCfb5";
+// const MYSQL_DBNAME="sstudent_mjapp_kingbottles";
 
 //const
 const HEAD_TITLE='祥好塑膠股份有限公司';//title
