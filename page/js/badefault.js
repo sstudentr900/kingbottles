@@ -659,7 +659,7 @@ function productsContent(o) {
         }
     
         function isImage(o) {
-    
+            console.log(o)
             var imageUrl = imgSrc(o);
             if (o.search('htt') != 0) {
                 imageUrl = imgSrcAb(o)
@@ -698,6 +698,7 @@ function productsContent(o) {
                 if (a['i'] == 'is_Release' || a['i'] == 'is_Email') {
                     value = isRelease({ 'v': v[a.i], 'yes': a.yes, 'no': a.no });
                 } else if (a['i'] == 'Image') {
+                    console.log(v,a['i'],v[a.i])
                     value = isImage(v[a.i]);
                 } else if (a['i'] == 'Link') {
                     value = isLink(v[a.i]);
@@ -873,6 +874,7 @@ function seach(o) {
 
             var obj = '';
             if (a == 'bamanager' || a == 'baproduct') {
+                console.log(a)
                 // obj = bacommon({ 'data': data, 'p': p, 'a': a });
                 obj = {
                     n: productsNav({
