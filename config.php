@@ -43,6 +43,11 @@ const MYSQL_DBNAME="mjapp_kingbottles";
 // const MYSQL_USERNAME="sstudent_sstudent";
 // const MYSQL_PASSWORD="q29m3MCfb5";
 // const MYSQL_DBNAME="sstudent_mjapp_kingbottles";
+//6.智邦
+// const MYSQL_HOST="localhost";
+// const MYSQL_USERNAME="vhost158597";
+// const MYSQL_PASSWORD="q29m3MCfb5";
+// const MYSQL_DBNAME="mjapp_kingbottles";
 
 //const
 const HEAD_TITLE='祥好塑膠股份有限公司';//title
